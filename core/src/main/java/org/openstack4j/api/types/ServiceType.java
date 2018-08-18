@@ -24,6 +24,7 @@ public enum ServiceType {
   	MAGNUM("magnum", "container"),
 	DNS("designate", "dns"),
 	WORKFLOW("mistral", "workflow"),
+	PLACEMENT("placement","placement"),
 	UNKNOWN("NA", "NA")
 	;
 

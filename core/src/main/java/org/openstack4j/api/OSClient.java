@@ -12,6 +12,7 @@ import org.openstack4j.api.manila.ShareService;
 import org.openstack4j.api.murano.v1.AppCatalogService;
 import org.openstack4j.api.networking.NetworkingService;
 import org.openstack4j.api.octavia.OctaviaService;
+import org.openstack4j.api.placement.ResourceProviderService;
 import org.openstack4j.api.sahara.SaharaService;
 import org.openstack4j.api.senlin.SenlinService;
 import org.openstack4j.api.storage.BlockStorageService;
@@ -347,4 +348,9 @@ public interface OSClient< T extends OSClient<T>> {
      */
     DNSService dns();
 
+    /**
+     * Returns the resourceProviderService API
+     * @return the resourceProviderService
+     */
+    ResourceProviderService resourceProvider();
 }

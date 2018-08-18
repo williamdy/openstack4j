@@ -3,6 +3,7 @@ package org.openstack4j.openstack.internal;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
+
 import org.openstack4j.api.Apis;
 import org.openstack4j.api.EndpointTokenProvider;
 import org.openstack4j.api.OSClient;
@@ -22,6 +23,7 @@ import org.openstack4j.api.manila.ShareService;
 import org.openstack4j.api.murano.v1.AppCatalogService;
 import org.openstack4j.api.networking.NetworkingService;
 import org.openstack4j.api.octavia.OctaviaService;
+import org.openstack4j.api.placement.ResourceProviderService;
 import org.openstack4j.api.sahara.SaharaService;
 import org.openstack4j.api.senlin.SenlinService;
 import org.openstack4j.api.storage.BlockStorageService;
@@ -251,6 +253,13 @@ public abstract class OSClientSession<R, T extends OSClient<T>> implements Endpo
         return (provider == null) ? CloudProvider.UNKNOWN : provider;
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public ResourceProviderService resourceProvider() {
+        return Apis.getResourceProviderServices();
+    }
+    
     /**
      * {@inheritDoc}
      */

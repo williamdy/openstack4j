@@ -107,6 +107,7 @@ import org.openstack4j.api.networking.ext.MemberService;
 import org.openstack4j.api.networking.ext.NetQuotaService;
 import org.openstack4j.api.networking.ext.VipService;
 import org.openstack4j.api.octavia.OctaviaService;
+import org.openstack4j.api.placement.ResourceProviderService;
 import org.openstack4j.api.sahara.ClusterService;
 import org.openstack4j.api.sahara.ClusterTemplateService;
 import org.openstack4j.api.sahara.DataSourceService;
@@ -268,6 +269,7 @@ import org.openstack4j.openstack.networking.internal.ext.MemberServiceImpl;
 import org.openstack4j.openstack.networking.internal.ext.NetQuotaServiceImpl;
 import org.openstack4j.openstack.networking.internal.ext.VipServiceImpl;
 import org.openstack4j.openstack.octavia.internal.OctaviaServiceImpl;
+import org.openstack4j.openstack.placement.internal.ResourceProviderServiceImpl;
 import org.openstack4j.openstack.sahara.internal.ClusterServiceImpl;
 import org.openstack4j.openstack.sahara.internal.ClusterTemplateServiceImpl;
 import org.openstack4j.openstack.sahara.internal.DataSourceServiceImpl;
@@ -326,6 +328,7 @@ import org.openstack4j.openstack.trove.internal.DBUserServiceImpl;
 import org.openstack4j.openstack.trove.internal.TroveServiceImpl;
 
 import com.google.common.collect.Maps;
+
 import org.openstack4j.openstack.workflow.internal.*;
 
 /**
@@ -528,6 +531,7 @@ public class DefaultAPIProvider implements APIProvider {
         bind(ActionExecutionService.class, ActionExecutionServiceImpl.class);
         bind(WorkflowEnvironmentService.class, WorkflowEnvironmentServiceImpl.class);
         bind(CronTriggerService.class, CronTriggerServiceImpl.class);
+        bind(ResourceProviderService.class,ResourceProviderServiceImpl.class);
     }
 
     /**
